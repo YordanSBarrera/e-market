@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-
+import { NavLink } from "react-router-dom";
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -26,7 +26,10 @@ const Products = () => {
 
   const Loading = () => {
     return (
-      <>
+      <>loading...
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
         <div className="col-md-3">
           <Skeleton height={350} />
         </div>
@@ -95,9 +98,9 @@ const Products = () => {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <a href="#" className="btn btn-outline-dark">
+                    <NavLink to={`/product/${product.id}`} className="btn btn-outline-dark">
                       Buy Now
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
