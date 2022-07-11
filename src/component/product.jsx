@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
+import { NavLink, useParams } from "react-router-dom";
+import  Skeleton  from "react-loading-skeleton"
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -17,7 +17,19 @@ const Product = () => {
   }, []);
 
   const Loading = () => {
-    return <>Loading...</>;
+    return (
+      <>
+        <div className="col-md-6">
+          <Skeleton height={400} />
+          loading...
+        </div>
+        <div className="col-md-6">
+          <Skeleton height={50} width={300} />
+          <Skeleton height={75} width={300} />
+          <Skeleton height={150} width={300} />
+        </div>
+      </>
+    );
   };
   const ShowProduct = () => {
     return (
@@ -35,9 +47,16 @@ const Product = () => {
           <h1 className="display-5">{product.title}</h1>
           <p className="lead">
             Rating {product.rating && product.rating.rate}
-            <i class="fa-regular fa-star-sharp"></i>
+            <i class="fa fa-start"></i>
           </p>
           <h3 className="display-6 fw-bold my-4">${product.price}</h3>
+          <p className="lead">{product.description}</p>
+          <button className="btn btn-outline-dark mx-4 py-2">
+            Add to Cart
+          </button>
+          <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2">
+            Go to Cart
+          </NavLink>
         </div>
       </>
     );
@@ -45,8 +64,10 @@ const Product = () => {
 
   return (
     <div>
-      <div className="container">
-        <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
+      <div className="container py-5">
+        <div className="row py-4">
+          {loading ? <Loading /> :  <ShowProduct />}
+        </div>
       </div>
     </div>
   );
