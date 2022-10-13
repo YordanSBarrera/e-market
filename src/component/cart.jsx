@@ -7,6 +7,7 @@ const Cart = () => {
   console.log(product);
   return (
     <>
+    Cart
       {product.map((prodInCar) => {
         return (
           <div

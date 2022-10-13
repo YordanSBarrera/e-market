@@ -4,6 +4,10 @@ import Skeleton from "react-loading-skeleton";
 import { useDispatch } from "react-redux/es/exports";
 import { addCart } from "../redux/action";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
+
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -22,7 +26,6 @@ const Product = () => {
       setLoading(false);
     };
     getProduct();
-    console.log(product);
   }, []);
 
   const Loading = () => {
@@ -57,8 +60,27 @@ const Product = () => {
           <h1 className="display-5">{product.title}</h1>
           <p className="lead">
             Rating {product.rating && product.rating.rate}
-            <i className="fa fa-start"></i>
+            <FontAwesomeIcon icon="fa-solid fa-star" />?
+            <FontAwesomeIcon icon="fa-solid fa-star-sharp" />
           </p>
+          <i className="braille icon"></i>
+          <FontAwesomeIcon icon="fa-solid fa-mouse-field" />
+{/* <FontAwesomeIcon icon={solid('user-secret')} />
+<FontAwesomeIcon icon={regular('coffee')} />
+<FontAwesomeIcon icon={icon({name: 'coffee', style: 'solid'})} />
+<FontAwesomeIcon icon={brands('twitter')} /> */}
+
+<i className="fa-solid fa-user"></i>
+<i className="fa-regular fa-user"></i>
+<i className="fa-light fa-user"></i>
+<i className="fa-thin fa-user"></i>
+<i className="fa-duotone fa-user"></i>
+
+<i class="fa-brands fa-font-awesome"></i>
+
+<i class="fa-sharp fa-solid fa-user"></i>
+
+
           <h3 className="display-6 fw-bold my-4">${product.price}</h3>
           <p className="lead">{product.description}</p>
           <button
