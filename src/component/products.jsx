@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
+import Header from "./pieces/header";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -115,12 +116,8 @@ const Products = () => {
   return (
     <div>
       <div className="container my-5 py-5">
-        <div className="row">
-          <div className="col-12 mb-5">
-            <h1 className="display-6 fw-bolder text-center">Latest Products</h1>
-            <hr />
-          </div>
-        </div>
+        <Header title="Latest Products" />
+
         <div className="row justify-content-center">
           {loading ? <Loading /> : <ShowProducts />}
         </div>

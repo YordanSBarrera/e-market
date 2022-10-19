@@ -1,10 +1,9 @@
 import React from "react";
+import Header from "./pieces/header";
 
 const Contact = () => {
   return (
-    <>
-      <h1>Contact</h1>
-    </>
+    <Header title="Contact"/>
   );
 };
 
