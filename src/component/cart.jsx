@@ -7,12 +7,12 @@ const Cart = () => {
   console.log(product);
   return (
     <>
-    Cart
+      <h1> Cart</h1>
       {product.map((prodInCar) => {
         return (
           <div
             className="card mb-3"
-            style="max-width: 540px;"
+            style={{ maxWidth: "540px" }}
             key={prodInCar.id}
           >
             <div className="row g-0">
@@ -30,13 +30,23 @@ const Cart = () => {
                     {prodInCar.title.substring(0, 12)}...
                   </h5>
                   <p className="card-text">${prodInCar.price}</p>
-                  <p className="card-text">
+                  <p className="card-text mb-5">
                     <small className="text-muted">
                       Last updated 3 mins ago
                     </small>
                   </p>
-                  <button className="btn btn-outline-dark mx-4 py-2">
+                  <hr/>
+                  <button
+                    className="btn btn-outline-dark mx-4 py-2"
+                    style={{ width: "100px" }}
+                  >
                     Buy
+                  </button>
+                  <button
+                    className="btn btn-outline-danger mx-4 py-2"
+                    style={{ width: "100px" }}
+                  >
+                    Remove
                   </button>
                 </div>
               </div>

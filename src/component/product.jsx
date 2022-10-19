@@ -46,7 +46,7 @@ const Product = () => {
     // console.log(product);
     return (
       <>
-        <div className="col-md-6">
+        <div className="col-md-6 col-sm-8">
           <img
             src={product.image}
             alt={product.title}
