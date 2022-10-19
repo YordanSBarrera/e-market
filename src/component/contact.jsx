@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "./pieces/header";
-
+import Template from "./pieces/template";
 const Contact = () => {
   return (
-    <Header title="Contact"/>
+    <Template title="Contact"/>
   );
 };
 

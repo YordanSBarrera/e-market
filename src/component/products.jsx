@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import Header from "./pieces/header";
+import Template from "./pieces/template";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -114,15 +115,10 @@ const Products = () => {
     );
   };
   return (
-    <div>
-      <div className="container my-5 py-5">
-        <Header title="Latest Products" />
-
-        <div className="row justify-content-center">
-          {loading ? <Loading /> : <ShowProducts />}
-        </div>
-      </div>
-    </div>
+    <Template
+      title="Latest Products"
+      body={loading ? <Loading /> : <ShowProducts />}
+    />
   );
 };
 

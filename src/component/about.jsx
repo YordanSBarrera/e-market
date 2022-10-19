@@ -1,9 +1,12 @@
 import React from "react";
-import Header from "./pieces/header";
+import Template from "./pieces/template";
 
 const About = () => {
   return (
-    <Header title="About"/>
+    <Template
+      title="About"
+      body="   yo...  blablabla"
+    />
   );
 };
 
